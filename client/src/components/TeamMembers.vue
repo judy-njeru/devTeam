@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1>Latest Members</h1>
-        <TeamMember v-bind:member="member" v-bind:error="error"
+        <TeamMember v-bind:member="member"
             v-for="(member, index) in members"
             v-bind:item="member"
             v-bind:index="index"
@@ -21,9 +21,7 @@
             TeamMember
         },
         props: [
-            'members',
-            'error',
-            
+            'members'
         ],
         data(){
             return {
@@ -32,7 +30,7 @@
         },
         methods: {
             updateParentInfo(data){
-                console.log(data)
+                // console.log(data)
                 this.info = data;
                 this.$emit('member-info',this.info);    
             }

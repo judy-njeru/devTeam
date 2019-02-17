@@ -23,14 +23,6 @@
                 error: ''
             } 
         },
-         async created( ){
-            try{
-                this.members = await memberService.viewMember();
-               
-            }catch(err){
-                this.error= err.message;
-            }
-        },
      
          methods: {
             async deleteMember(id){

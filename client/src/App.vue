@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <TeamMembers v-bind:members="members" v-bind:error="error" @member-info="updateParentInfo"/>
+    <TeamMembers v-bind:members="members" @member-info="updateParentInfo"/>
     <AddMember v-bind:members="members" />
     <MemberInfo v-bind:memberInfo="memberInfo"/>
   </div>
@@ -24,8 +24,7 @@ export default {
   data() {
     return {
       members: [],
-      memberInfo:null,
-      error: ''
+      memberInfo:null
     }
   },
    methods: {
