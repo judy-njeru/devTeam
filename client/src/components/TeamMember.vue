@@ -4,7 +4,7 @@
         <div class="members-container">
             <div class="member" v-on:dblclick='deleteMember(member._id)' >
             <!--{{ `${member.createdAt.getDate()}/${member.createdAt.getMonth()}/${member.createdAt.getFullYear()}`}}
-            --><div class="text" v-on:click='viewMember(member._id)'>{{teamMember.name}}</div>
+            --><div class="text" v-on:click='viewMember(teamMember._id)'>{{teamMember.name}}</div>
             </div>
         </div>
     </div>
@@ -15,11 +15,12 @@
 
     export default {
         name: 'TeamMember',
-        props: ['member', 'error'],
+        props: ['member'],
         data() {
             return {
-                 teamMember: this.member,
-                 memberInfo: null
+                teamMember: this.member,
+                memberInfo: null,
+                error: ''
             } 
         },
          async created( ){
