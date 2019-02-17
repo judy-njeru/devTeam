@@ -1,19 +1,42 @@
 <template>
-    <div>
-        <div v-bind:key="member.id" v-for="member in members">
-           <TeamMember v-bind:member="member" />
-        </div> 
+    <div class="container">
+        <h1>Latest Members</h1>
+        <TeamMember v-bind:member="member" v-bind:error="error"
+            v-for="(member, index) in members"
+            v-bind:item="member"
+            v-bind:index="index"
+            v-bind:key="member._id"
+            @member-info="updateParentInfo"
+        />
     </div>
 </template>
 
 <script>
     import TeamMember from './TeamMember.vue';
+    import memberService from '../memberService';
+
     export default {
         name: 'TeamMembers',
         components: {
             TeamMember
         },
-        props: ['members']
+        props: [
+            'members',
+            'error',
+            
+        ],
+        data(){
+            return {
+                info: null
+            }
+        },
+        methods: {
+            updateParentInfo(data){
+                console.log(data)
+                this.info = data;
+                this.$emit('member-info',this.info);    
+            }
+        },
     }
 </script>
 
