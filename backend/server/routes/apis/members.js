@@ -15,7 +15,7 @@ router.get('/', async(req, res)=>{
 })
 
 async function loadMembersCollection(){
-    const client = await mongodb.MongoClient.connect('mongodb+srv://abc123:smari123@cluster0-xkucs.mongodb.net/test?retryWrites=true', {
+    const client = await mongodb.MongoClient.connect('mongodb+srv://abc123:smari123@jubimembers-xkucs.mongodb.net/test?retryWrites=true', {
         useNewUrlParser: true
     })
 

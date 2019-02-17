@@ -22,7 +22,7 @@ class memberService {
     }
 
     //add members
-    static addMember(skills,name, background){
+    static addMember(name,skills, background){
         return axios.post(url, {
             name, 
             skills,
