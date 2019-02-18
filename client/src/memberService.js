@@ -26,7 +26,7 @@ class memberService {
         return axios.post(url, {
             name, 
             skills,
-            background   
+            background
         })
     }
 

@@ -84,6 +84,7 @@ export default {
       }
   },
   async created( ){
+    console.log("created function")
     try{
         this.members = await memberService.getMembers();
       }catch(err){
@@ -100,7 +101,6 @@ export default {
   
   @import 'sass/variables.scss';
   @import 'sass/typography.scss';
-  // @import 'sass/overlay.scss';
   @import 'sass/pattern.scss';
   
   #app {
@@ -118,8 +118,9 @@ export default {
 
   body {
     background: $c-bg;
-    max-height: 100vh;
-  }
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
 
   .btn-main {
       color: $c-black;

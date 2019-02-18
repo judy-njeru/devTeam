@@ -12,7 +12,7 @@
                 v-bind:key="info._id"   
             >   
                 <div class="row mt-5">
-                    <h2 class="d-flex col-12 col-md-8 offset-md-2 align-items-center justify-content-center">{{info.name}}</h2>
+                    <h2 class="d-flex col-12 col-md-8 offset-md-2 align-items-center justify-content-center text-center">{{info.name}}</h2>
                 </div>
                 <div class="row mt-3">
                     <div class="box-member-2 d-flex col-12 col-md-8 offset-md-2 flex-column flex-wrap flex-md-nowrap">

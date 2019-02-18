@@ -44,31 +44,9 @@
 
 <style lang="scss" scoped>
 
-    @import '../sass/variables.scss';
-
-
-
-    // // OVERLAY
-
-    // .box-overlay {
-    //     display: block;
-    //     position: fixed;
-    //     z-index: 1000;
-    //     top: 0px;
-    //     left: 0px;
-    //     min-height: 100vh;
-    //     min-width: 100vw;
-    //     background: $c-bg;
-    //     // overflow-y: scroll;
-    // }
-
-
-
-
-
+@import '../sass/variables.scss';
 
 .banner {
-    position: relative;
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -106,7 +84,6 @@
         stroke-dashoffset: 0;
     }
 }
-
 
 .svg-our-team {
     animation: team 1s linear forwards;

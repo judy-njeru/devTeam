@@ -34,10 +34,13 @@
         },
         methods: {
             updateParentInfo(data){
-                // console.log(data)
                 this.info = data;
                 this.$emit('member-info',this.info);    
-            }
+            },
+            async deleteMember(id){
+                await memberService.deleteMember(id)
+                this.$parent.members = await memberService.getMembers()
+            },
         },
     }
 </script>

@@ -51,8 +51,8 @@
         methods: {
             async addMember(){
                 await memberService.addMember(this.name, this.skills, this.background)
-                this.teamMember = await memberService.getMembers();
                 this.$parent.hideAddForm()
+                this.$parent.members = await memberService.getMembers()
             },
             inputFocus(input,value,focus){
                 if(!focus && this[value] != ''){

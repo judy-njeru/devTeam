@@ -1,19 +1,19 @@
 <template>
     <div class="box-member col-12 col-md-5 mb-3 mb-md-5">
         <p class="error" v-if="error">{{error}}</p>
-        <div class="box-member-inner" v-on:click='viewMember(teamMember._id)'>
-            <div class="box-actions">
-                <button class="btn-delete" v-on:click='deleteMember(member._id)'>
-                    <svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <defs></defs>
-                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Desktop-HD-Copy-28" transform="translate(-44.000000, -163.000000)" fill="#4A4A4A" fill-rule="nonzero">
-                                <path d="M53.5,168.464466 L58.8033009,163.161165 L62.3388348,166.696699 L57.0355339,172 L62.3388348,177.303301 L58.8033009,180.838835 L53.5,175.535534 L48.1966991,180.838835 L44.6611652,177.303301 L49.9644661,172 L44.6611652,166.696699 L48.1966991,163.161165 L53.5,168.464466 Z" id="Combined-Shape"></path>
-                            </g>
+        <div class="box-actions">
+            <button class="btn-delete" v-on:click='deleteMember(member._id)'>
+                <svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Desktop-HD-Copy-28" transform="translate(-44.000000, -163.000000)" fill="#4A4A4A" fill-rule="nonzero">
+                            <path d="M53.5,168.464466 L58.8033009,163.161165 L62.3388348,166.696699 L57.0355339,172 L62.3388348,177.303301 L58.8033009,180.838835 L53.5,175.535534 L48.1966991,180.838835 L44.6611652,177.303301 L49.9644661,172 L44.6611652,166.696699 L48.1966991,163.161165 L53.5,168.464466 Z" id="Combined-Shape"></path>
                         </g>
-                    </svg>
-                </button>
-            </div>
+                    </g>
+                </svg>
+            </button>
+        </div>
+        <div class="box-member-inner" v-on:click='viewMember(teamMember._id)'>
             {{teamMember.name}}
         </div>
     </div>
@@ -35,12 +35,11 @@
      
         methods: {
             async deleteMember(id){
-                await memberService.deleteMember(id)
-                this.teamMember= await memberService.getMembers();
+                this.$parent.deleteMember(id)
             },
             async viewMember(memberID){
                 await memberService.viewMember(memberID)
-                this.memberInfo= await memberService.viewMember(memberID);
+                this.memberInfo = await memberService.viewMember(memberID);
                 this.$emit('member-info',this.memberInfo);
                 this.$parent.$parent.showMemberInfo()
             },
@@ -82,6 +81,7 @@
         top: 15px;
         right: 20px;
         display: none;
+        z-index: 1;
 
         .btn-delete {
             height: 40px;
@@ -129,6 +129,9 @@
     font-size: 2em;
     font-weight: 800;
     font-family: $font2 !important;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
 
     // &:hover {
     //     color: $c-wildcard;
