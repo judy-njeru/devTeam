@@ -68,23 +68,18 @@ export default {
           this.memberInfo = data;
       },
       showAddForm(){
-        // console.log("jæ")
         this.addFormActive = true
       },
       hideAddForm(){
-        // console.log("jæ")
         this.addFormActive = false
       },
       showMemberInfo(){
-        // console.log("jæ")
         this.memberInfoActive = true
       },
       hideMemberInfo(){
-        // console.log("jæ")
         this.memberInfoActive = false
       },
       hideBanner(){
-        // console.log("jæ")
         this.bannerActive = false
       }
   },
@@ -105,7 +100,7 @@ export default {
   
   @import 'sass/variables.scss';
   @import 'sass/typography.scss';
-  @import 'sass/overlay.scss';
+  // @import 'sass/overlay.scss';
   @import 'sass/pattern.scss';
   
   #app {

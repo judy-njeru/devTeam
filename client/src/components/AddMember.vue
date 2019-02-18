@@ -72,6 +72,7 @@
 <style lang="scss" scoped>
 
     @import '../sass/variables.scss';
+    @import '../sass/overlay.scss';
 
     form {
         width: 100%;
