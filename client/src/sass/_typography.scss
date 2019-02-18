@@ -1,0 +1,33 @@
+
+  p {
+    line-height: 1.8em;
+}
+
+h2 {
+    font-family: $font2;
+    font-size: 5em;
+    font-weight: 800;
+}
+
+h3 {
+    font-family: $font2;
+    font-size: 2em;
+    font-weight: 800;  
+}
+
+h4 {
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.t-thin {
+    font-weight: 200;
+}
+
+.t-light {
+    color: $c-gray;
+}
+
+.t-small {
+    font-size: 0.8em;
+}

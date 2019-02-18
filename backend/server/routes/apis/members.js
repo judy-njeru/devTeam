@@ -15,7 +15,11 @@ router.get('/', async(req, res)=>{
 })
 
 async function loadMembersCollection(){
-    const client = await mongodb.MongoClient.connect('mongodb+srv://abc123:smari123@jubimembers-xkucs.mongodb.net/test?retryWrites=true', {
+    // const client = await mongodb.MongoClient.connect('mongodb+srv://abc123:smari123@jubimembers-xkucs.mongodb.net/test?retryWrites=true', {
+    // const client = await mongodb.MongoClient.connect('mongodb+srv://jubi:smari123@devtest-plvps.mongodb.net/test?retryWrites=true', {
+    // const client = await mongodb.MongoClient.connect('mongodb+srv://jubi:smari123>@devtest-plvps.mongodb.net/test?retryWrites=true', {
+    const uri = 'mongodb+srv://abc123:smari123@cluster0-ohxuo.mongodb.net/test?retryWrites=true'
+    const client = await mongodb.MongoClient.connect(uri, {
         useNewUrlParser: true
     })
 
