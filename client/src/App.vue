@@ -28,8 +28,8 @@
     <transition name="fade" mode="out-in">
       <MemberInfo v-bind:memberInfo="memberInfo" v-if="memberInfoActive"/>
     </transition>
-    <div class="container">
-      <div class="row d-flex align-items-start align-items-sm-end flex-grow-1 mt-3">
+    <div class="row flex-grow-1">
+    <div class="container d-flex align-items-start align-items-sm-end mt-3">
         <div class="col-12 col-lg-8 offset-lg-2 d-flex justify-content-center justify-content-md-end">
           <button class="btn-main" v-on:click="showAddForm">+ New</button>
         </div>
@@ -106,6 +106,8 @@ export default {
   #app {
     min-height: 100vh;
     padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
   }
 
   * {
