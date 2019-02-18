@@ -21,7 +21,6 @@
         </svg>
       <div class="pattern ml-3"></div>
     </nav>
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <TeamMembers v-bind:members="members" @member-info="updateParentInfo"/>
     <transition name="fade" mode="out-in">
       <AddMember v-bind:members="members" v-bind:addFormActive="addFormActive" v-if='addFormActive'/>
@@ -40,8 +39,6 @@
 </template>
 
 <script>
-  // window.$ = require('jquery')
-  // window.JQuery = require('jquery')
   import memberService from './memberService';
   import Banner from './components/Banner.vue';
   import TeamMembers from './components/TeamMembers.vue';
