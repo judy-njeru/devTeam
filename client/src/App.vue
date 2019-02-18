@@ -105,6 +105,7 @@ export default {
   
   #app {
     min-height: 100vh;
+    padding-bottom: 90px;
   }
 
   * {
@@ -119,7 +120,6 @@ export default {
   body {
     background: $c-bg;
     min-height: 100vh;
-    padding-bottom: 90px;
 }
 
   .btn-main {
